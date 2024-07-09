@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Blackjack</title>
+    <script src="gsap.min.js"></script>
+    <script src="TweenMax.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="welcome-screen">
+        <h1>Welcome to Blackjack</h1>
+        <button id="start-game">Start Game</button>
+        <button id="show-rules">Game Rules</button>
+    </div>
+
+    <div id="rules-modal" class="modal">
+        <div class="modal-content">
+            <h2>Blackjack Rules</h2>
+            <p>
+                1. The goal is to get closer to 21 than the dealer without going over.<br>
+                2. Face cards are worth 10, Aces are worth 1 or 11.<br>
+                3. Click 'Hit' to get another card, 'Stand' to keep your current hand.<br>
+                4. 'Double Down' doubles your bet and gives you one more card.<br>
+                5. 'Split' separates your cards into two hands if they have the same value.<br>
+                6. Blackjack (an Ace with a 10-value card) pays 3:2.<br>
+                7. Dealer hits on soft 17 (Ace counted as 11 with total of 17).
+            </p>
+            <button id="close-rules">Close</button>
+        </div>
+    </div>
+
+    <div id="game-container" style="display: none;">
+        <div id="notification-area">
+            <div id="notification-message"></div>
+        </div>
+        <div id="dealer-area">
+            <h2>Dealer's Hand</h2>
+            <div id="dealer-hand" class="hand"></div>
+        </div>
+        <div id="player-area">
+            <h2>Your Hand</h2>
+            <div id="player-hands"></div>
+        </div>
+        <div id="controls">            
+            <button id="hit-button">Hit</button>
+            <button id="stand-button">Stand</button>
+            <button id="double-button">Double Down</button>
+            <button id="split-button">Split</button>
+            <button id="deal-button">Deal</button>
+        </div>
+        <div id="betting-area">
+            <div id="bet-display">Current Bet: $<span id="current-bet">0</span></div>
+            <div id="bet-chips"></div>
+        </div>
+        <div id="chip-container">
+            <img src="cards/10-chip.png" alt="$10 chip" class="chip" data-value="10">
+            <img src="cards/25-chip.png" alt="$25 chip" class="chip" data-value="25">
+            <img src="cards/50-chip.png" alt="$50 chip" class="chip" data-value="50">
+            <img src="cards/100-chip.png" alt="$100 chip" class="chip" data-value="100">
+        </div>
+        <div id="bet-amount">Bet: $<span id="current-bet-amount">0</span> (Max: $500)</div>
+        <div id="player-balance">Balance: $<span id="balance">1000</span></div>
+        <div id="stats">
+            <p>Games Played: <span id="games-played">0</span></p>
+            <p>Games Won: <span id="games-won">0</span></p>
+            <p>Win Percentage: <span id="win-percentage">0%</span></p>
+        </div>
+        <div id="animated-dialog" class="animated-dialog">
+            <p id="dialog-message"></p>
+        </div>
+    </div>
+    <div id="message-box"style="display: none;"></div>
+    <div id="message" style="display: none;"></div>
+
+    <script src="card.js"></script>
+    <script src="deck.js"></script>
+    <script src="blackjackaudio.js"></script>
+    <script src="blackjackui.js"></script>
+    <script src="blackjack.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
