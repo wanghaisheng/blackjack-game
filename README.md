@@ -1,3 +1,5 @@
+2024-12-14
+
 I used Claude 3.5 Sonnet Chat + Cursor + open source images. I created this game to develop a workflow between chat and Cursor
 
 # Blackjack Game
